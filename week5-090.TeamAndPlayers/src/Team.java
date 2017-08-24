@@ -10,7 +10,7 @@ public class Team {
 
     private String teamName;
     private ArrayList<Player> playerList = new ArrayList<Player>();
-    private int maxSize = 16;
+    private int maxSize = 21;
 
     public Team(String teamName) {
         this.teamName = teamName;
