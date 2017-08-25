@@ -32,17 +32,16 @@ public class MyDate {
         return false;
     }
 
-    public int differenceInYears(MyDate comparedDate) {
-        double yearDiff = 0.00;
-        if (this.year > comparedDate.year) {
-            yearDiff = (this.year + (double) this.month / 12 + (double) this.day / 365)
-                    - (comparedDate.year + (double) comparedDate.month / 12
-                    + (double) comparedDate.day / 365);
-        } else {
-            yearDiff = (comparedDate.year + (double) comparedDate.month / 12
-                    + (double) comparedDate.day / 365)
-                    - (this.year + (double) this.month / 12 + (double) this.day / 365);
-        }
-        return (int) yearDiff;
-    }
+  public int differenceInYears(MyDate compared) {
+			double yearDiff = 0;
+			if(this.year > compared.year) {
+				yearDiff +=((this.year * 365) +(this.month * 30) + (this.day)) - ((compared.year * 365) + (compared.month * 30) + compared.day);
+			} else if(compared.year > this.year) {
+				yearDiff +=((compared.year * 365) +(compared.month * 30) + (compared.day)) - ((this.year * 365) + (this.month * 30) + this.day);
+			}
+			yearDiff = yearDiff / 365;
+				
+			return (int) yearDiff;
+			
+		}
 }
