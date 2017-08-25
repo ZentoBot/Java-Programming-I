@@ -10,7 +10,7 @@ public class Team {
 
     private String teamName;
     private ArrayList<Player> playerList = new ArrayList<Player>();
-    private int maxSize = 16;
+    private int maxSize ;
 
     public Team(String teamName) {
         this.teamName = teamName;
@@ -21,7 +21,7 @@ public class Team {
     }
 
     public void addPlayer(Player player) {
-        if (playerList.size() < this.maxSize) {
+        if (playerList.size() < this.maxSize || this.maxSize == null) {
             playerList.add(player);
         }
     }
